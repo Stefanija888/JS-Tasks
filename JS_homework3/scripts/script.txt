@@ -1,0 +1,104 @@
+//homework part1
+function dataType(value) {
+    var dataTypes = [Number, String, Boolean, undefined, Object];
+    var i, len;
+    var newVariable = "example";
+    var object = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" }
+    var x = object;
+
+
+
+    if (typeof value === "object") {
+        for (i = 0, len = dataTypes.length; i < len; i++) {
+            if (value instanceof dataTypes[i]) {
+                return dataTypes[i];
+            }
+        }
+    }
+
+    return typeof value;
+}
+
+
+console.log(dataType(20));
+console.log(dataType('Bob'));
+console.log(dataType(true));
+console.log(dataType(window.newVariable));
+
+
+
+//homework part2
+var age = prompt("please enter  the age of your dog:")
+
+function dogYears(age) {
+    var ages = age * 7;
+
+    return ages;
+}
+console.log(dogYears(age));
+
+//homework part3
+
+
+var balance = 5000;
+function atm() {
+
+    var choice = parseInt(prompt('Select a choice 1 - Balance 2 - Deposit 3 - Withdrawal 4 - Exit')); 
+
+    if (choice === 1) {
+        get_balance();
+    } else if (choice === 2) {
+        deposit();
+    } else if (choice === 3) {
+        withdrawal();
+    } else if (choice === 4) {
+        exit();
+    } else {
+        error();
+    }
+}
+
+
+function error() {
+    alert('Error: accepted numbers are 1 - 4.');
+
+}
+function exit() {
+    var confirm_leave = confirm('You have selected exit.');
+    if (confirm_leave) {
+        window.close();
+    } else {
+        atm();
+    }
+}
+
+
+
+function get_balance() {
+    alert('Your current balance is: ' + balance);
+
+}
+
+function deposit() {
+    var deposit = parseInt(prompt('How much would you like to deposit?'));
+    balance = balance + deposit;
+    get_balance();
+
+}
+
+function withdrawal() {
+    var withdrawal = parseInt(prompt('How much would you like to withdrawal?'));
+
+    if (balance > withdrawal) {
+        balance = balance- withdrawal;
+        get_balance();
+    }
+    else {
+        alert("Not enough money!");
+    }
+}
+
+atm();
+
+
+

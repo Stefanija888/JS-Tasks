@@ -1,0 +1,4 @@
+var phonePrice = 119.95;
+var tax = 119.95 * 0.05;
+calculate = 30 * (phonePrice + tax);
+console.log(calculate)

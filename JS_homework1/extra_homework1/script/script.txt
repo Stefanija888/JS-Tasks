@@ -1,0 +1,13 @@
+// //extrahomework-1
+var numb1 = prompt("please enter  number1:")
+var numb2 = prompt("pelase enter number2");
+console.log(numb1 % numb2);
+
+//extrahomework-2
+var sideA = prompt("enter the value of side A:");
+var sideB = prompt("enter the value of side B:");
+console.log((2 * sideA) + (2 * sideB));
+
+//extrahomework-3
+var a = prompt("enter the side of equilateral triangle:")
+console.log((1 / 2) * Math.sqrt(3) * a);
